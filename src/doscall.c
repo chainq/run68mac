@@ -1947,7 +1947,7 @@ static Long Read( short hdl, Long buf, Long len )
 #if defined(WIN32)
 	ret = ReadFile(finfo [ hdl ].fh, read_buf, len, (LPDWORD)&read_len, NULL);
 #else
-	read_len = fread( read_buf, 1, len, finfo [ hdl ].fh );
+	read_len = fgets( read_buf, len, finfo [ hdl ].fh );
 #endif
 
 	return( read_len );
