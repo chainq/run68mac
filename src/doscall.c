@@ -2273,7 +2273,7 @@ static Long Curdir( short drv, char *buf_ptr )
 		if ( ret_ptr == NULL )
 			return( -15 );
 	}
-	if (str[ 2 ] == ':' )
+	if (str[ 1 ] == ':' )
 		strcpy( buf_ptr, &(str[ 3 ]) );
 	else
 		strcpy( buf_ptr, &(str[ 1 ]) );
