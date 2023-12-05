@@ -1948,6 +1948,9 @@ static Long Read( short hdl, Long buf, Long len )
 	ret = ReadFile(finfo [ hdl ].fh, read_buf, len, (LPDWORD)&read_len, NULL);
 #else
 	read_len = fgets( read_buf, len, finfo [ hdl ].fh );
+	if (read_len != NULL) {
+		read_len=strnlen(read_buf, len);
+	}
 #endif
 
 	return( read_len );
